@@ -1,97 +1,81 @@
 ---
-title: "Introduction"
-description: "Welcome to the new home for your documentation"
+title: "Overview"
+description: "Terse is a code-first workflow platform that gives coding agents the context they need out of the box. Connect your systems, generate typed helpers from workspace context, and deploy end-to-end workflows."
 ---
 
-## Setting up
+<div className="mt-2 mb-2">
+  <a
+    href="/quickstart"
+    className="inline-flex items-center justify-center rounded-lg px-4 py-2 text-sm font-semibold text-white no-underline transition-opacity hover:opacity-90"
+    style={{ backgroundColor: "#0F766E" }}
+  >
+    Quickstart
+  </a>
+</div>
 
-Get your documentation site up and running in minutes.
+## How it works
 
-<Card
-  title="Start here"
-  icon="rocket"
-  href="/quickstart"
-  horizontal
->
-  Follow our three step quickstart guide.
-</Card>
+<div style={{ position: "relative", paddingBottom: "62.5%", height: 0 }}>
+  <iframe
+    src="https://www.loom.com/embed/447d269951604381b5a97b54bff07252"
+    title="How Terse workflows work"
+    frameBorder="0"
+    allowFullScreen
+    style={{
+      position: "absolute",
+      top: 0,
+      left: 0,
+      width: "100%",
+      height: "100%",
+    }}
+  />
+</div>
 
-## Make it yours
+## What you can build
 
-Design a docs site that looks great and empowers your users.
-
-<Columns cols={2}>
+<CardGroup cols={2}>
   <Card
-    title="Edit locally"
-    icon="pen-to-square"
-    href="/development"
+    title="CRM enrichment"
+    icon="sparkles"
+    href="/templates/new-deal-enrichment"
   >
-    Edit your docs locally and preview them in real time.
+    Enrich new deals with Apollo, score fit, and write the result back to Attio.
   </Card>
-  <Card
-    title="Customize your site"
-    icon="palette"
-    href="/essentials/settings"
-  >
-    Customize the design and colors of your site to match your brand.
-  </Card>
-    <Card
-    title="Set up navigation"
-    icon="map"
-    href="/essentials/navigation"
-  >
-    Organize your docs to help users find what they need and succeed with your product.
-  </Card>
-  <Card
-    title="API documentation"
-    icon="terminal"
-    href="/api-reference/introduction"
-  >
-    Auto-generate API documentation from OpenAPI specifications.
-  </Card>
-</Columns>
-
-## Create beautiful pages
-
-Everything you need to create world-class documentation.
-
-<Columns cols={2}>
-  <Card
-    title="Write with MDX"
-    icon="pen-fancy"
-    href="/essentials/markdown"
-  >
-    Use MDX to style your docs pages.
+  <Card title="Deal Alerts" icon="bell" href="/templates/crm-slack-alerts">
+    Post Slack alerts when a deal hits a key stage.
   </Card>
   <Card
-    title="Code samples"
-    icon="code"
-    href="/essentials/code"
+    title="Weekly Pipeline Reporting"
+    icon="chart-column"
+    href="/templates/weekly-pipeline-digest"
   >
-    Add sample code to demonstrate how to use your product.
+    Summarize open pipeline weekly and post the digest to Slack.
   </Card>
-  <Card
-    title="Images"
-    icon="image"
-    href="/essentials/images"
-  >
-    Display images and other media.
+  <Card title="Additional Templates" icon="book-open" href="/templates">
+    Start from a working GTM workflow instead of a blank file.
   </Card>
-  <Card
-    title="Reusable snippets"
-    icon="recycle"
-    href="/essentials/reusable-snippets"
-  >
-    Write once and reuse across your docs.
-  </Card>
-</Columns>
+</CardGroup>
 
-## Need inspiration?
+## Key concepts
 
-<Card
-  title="See complete examples"
-  icon="stars"
-  href="https://mintlify.com/customers"
->
-  Browse our showcase of exceptional documentation sites.
-</Card>
+| Concept               | What it means                                                                                                                      |
+| --------------------- | ---------------------------------------------------------------------------------------------------------------------------------- |
+| **Context as Code**   | `terse generate` compiles your connected integrations into TypeScript — no runtime discovery of IDs, channels, or lists            |
+| **Workflow**          | A TypeScript automation with triggers, skills, and an `onTrigger` handler, deployed via `terse deploy`                             |
+| **Trigger**           | The event (e.g. `Attio.onRecordCreated()`) or schedule (e.g. `Schedule.cron()`) that starts a workflow                             |
+| **Skill**             | An integration capability available to the workflow (e.g. `Apollo.skill()`, `Slack.skill()`)                                       |
+| **Generated helpers** | Typed exports in `src/terse.generated.ts` — resource constants, trigger builders, skill constructors, and `agent.tools.*` wrappers |
+
+## Where to start
+
+<CardGroup cols={2}>
+  <Card title="Quickstart" icon="rocket" href="/quickstart">
+    Get a weekly pipeline digest live in under 10 minutes.
+  </Card>
+  <Card title="Context as Code" icon="lightbulb" href="/context-as-code">
+    Understand how generated helpers make workflows more stable.
+  </Card>
+  <Card title="Compare approaches" icon="scale" href="/compare">
+    See where Terse fits relative to Zapier, custom scripts, and AI agents.
+  </Card>
+</CardGroup>
